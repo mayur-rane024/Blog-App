@@ -1,0 +1,13 @@
+<%- include('layouts/main') %>
+<h2>All Blogs</h2>
+<ul>
+    <% blogs.forEach(blog => { %>
+        <li>
+            <a href="/blogs/<%= blog._id %>"><%= blog.title %></a>
+            <p><%= blog.description %></p>
+            <% if (blog.image) { %>
+                <img src="/uploads/<%= path.basename(blog.image) %>" alt="<%= blog.title %>">
+            <% } %>
+        </li>
+    <% }) %>
+</ul>

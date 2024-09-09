@@ -1,0 +1,10 @@
+<%- include('layouts/main') %>
+<h2><%= blog.title %></h2>
+<p><%= blog.description %></p>
+<p><%= blog.content %></p>
+<% if (blog.image) { %>
+    <img src="/uploads/<%= path.basename(blog.image) %>" alt="<%= blog.title %>">
+<% } %>
+<form action="/delete/<%= blog._id %>" method="POST">
+    <button type="submit">Delete Blog</button>
+</form>
